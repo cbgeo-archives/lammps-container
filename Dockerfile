@@ -16,6 +16,6 @@ RUN cd /opt && wget http://lammps.sandia.gov/tars/lammps-stable.tar.gz && \
     make -j serial |& tee log.make_serial
 
 # Change to lammps directory
-ENTRYPOINT ["/opt/lammps/src/lmp_serial", "-i"]
-CMD ["/opt/lammps/examples/granregion/in.granregion.mixer"]
+# ENTRYPOINT ["/opt/lammps/src/lmp_serial", "-i"]
+# CMD ["/opt/lammps/examples/granregion/in.granregion.mixer"]
 
