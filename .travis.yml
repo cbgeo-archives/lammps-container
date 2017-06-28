@@ -7,7 +7,7 @@ services:
 
 before_install:
     - docker build -t "cbgeo/lammps" ./
-    - docker run -ti cbgeo/lammps /bin/bash -c "cd /"
+    - docker run -ti cbgeo/lammps
     - docker ps -a
 
 script:
