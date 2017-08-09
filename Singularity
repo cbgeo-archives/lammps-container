@@ -1,6 +1,7 @@
-Bootstrap: docker
-From: centos:latest
-IncludeCmd: yes
+BootStrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
+Include: yum
 
 %setup
   cd $SINGULARITY_ROOTFS/opt
