@@ -1,13 +1,10 @@
-BootStrap: yum
-OSVersion: 7
-MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
-Include: yum
+Bootstrap: docker
+From: centos:latest
+IncludeCmd: yes
 
 %setup
   cd $SINGULARITY_ROOTFS/opt
   wget http://lammps.sandia.gov/tars/lammps-stable.tar.gz
-  mkdir -p /root/.rpmmacros
-  echo -e "%_var /var\n%_dbpath %{_var}/lib/rpm" &> /root/.rpmmacros
 
 %post
   yum -y groupinstall "Development Tools"
