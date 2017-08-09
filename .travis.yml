@@ -5,10 +5,8 @@ language: ruby
 services:
     - docker
 
-before_install:
+install:
     - docker build -t "cbgeo/lammps" ./
-    - docker run -ti cbgeo/lammps
-    - docker ps -a
 
 script:
     - echo "Built success"
