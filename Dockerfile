@@ -7,9 +7,8 @@ RUN yum update -y && \
     yum install -y wget && \
     yum clean all
 
-# Download and compile LAMMPS
-RUN cd /opt && wget http://lammps.sandia.gov/tars/lammps-stable.tar.gz && \
-    mkdir -p /opt/lammps && cd /opt/lammps && \
+RUN cd /opt && wget http://lammps.sandia.gov/tars/lammps-stable.tar.gz
+RUN mkdir -p /opt/lammps && cd /opt/lammps && \
     tar xf ../lammps-stable.tar.gz --strip-components 1 && \
     cd src && \
     make yes-granular |& tee log.make_yes_granular && \
