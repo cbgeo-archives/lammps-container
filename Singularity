@@ -6,6 +6,8 @@ Include: yum
 %setup
   cd $SINGULARITY_ROOTFS/opt
   wget http://lammps.sandia.gov/tars/lammps-stable.tar.gz
+  mkdir -p /root/.rpmmacros
+  echo -e "%_var /var\n%_dbpath %{_var}/lib/rpm" &> /root/.rpmmacros
 
 %post
   yum -y groupinstall "Development Tools"
