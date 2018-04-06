@@ -1,3 +1,4 @@
+# LAMMPS Serial with Granular
 BootStrap: yum
 OSVersion: 7
 MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
